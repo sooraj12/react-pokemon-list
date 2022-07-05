@@ -4,7 +4,7 @@ import { PokemonList } from "./PokemonList";
 
 function PokemonListView() {
   return (
-    <div className="bg-[#f2f9fb] min-h-screen rounded-lg px-10 py-10">
+    <div className="bg-[#f2f9fb] h-screen rounded-lg p-5 flex flex-col">
       <PokemonListProvider>
         <PokemonSearch />
         <PokemonList />

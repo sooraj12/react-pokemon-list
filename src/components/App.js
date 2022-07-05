@@ -2,8 +2,8 @@ import { PokemonListView } from "./PokemonListView";
 
 function App() {
   return (
-    <div className="bg-[#dae4ea] min-h-screen px-10 py-10">
-      <div className="container">
+    <div className="bg-[#dae4ea]">
+      <div className="container py-10">
         <PokemonListView />
       </div>
     </div>

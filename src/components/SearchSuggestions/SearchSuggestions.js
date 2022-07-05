@@ -8,6 +8,7 @@ function SearchSuggestions({
   items,
   getItemKey,
   getItemValue,
+  onBlur = () => {},
 }) {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const focusRef = useClickOutside(() => setShowSuggestions(false));
@@ -17,8 +18,10 @@ function SearchSuggestions({
   };
 
   const handleItemSelect = (item) => {
+    const itemValue = getItemValue(item);
     setShowSuggestions(false);
-    onChange(getItemValue(item));
+    onChange(itemValue);
+    onBlur(itemValue);
   };
 
   return (
@@ -48,6 +51,7 @@ function SearchSuggestions({
         }}
         value={value}
         onChange={handleInputChange}
+        onBlur={() => onBlur(value)}
       />
 
       {showSuggestions && (
@@ -63,7 +67,7 @@ function SearchSuggestions({
         bg-clip-padding
         border-none
         w-full
-        cursor-pointer"
+        cursor-pointer z-50"
           aria-labelledby="dropdownMenuButton1"
         >
           {items.map((item) => (

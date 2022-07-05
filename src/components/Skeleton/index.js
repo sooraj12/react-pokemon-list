@@ -1,1 +1,1 @@
-export { Skeleton } from "./Skeleton";
+export { ListSkeleton } from "./ListSkeleton/ListSkeleton";
